@@ -11,7 +11,7 @@
     "start": "ts-node create-db.ts && nest start",
     "start:dev": "ts-node create-db.ts && nest start --watch",
     "start:debug": "ts-node create-db.ts && nest start --debug --watch",
-    "start:prod": "ts-node create-db.ts && node dist/main",
+    "start:prod": "ts-node create-db.ts && rm -rf dist && nest build && node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "NODE_ENV=test ts-node create-db.ts && jest",
     "test:watch": "NODE_ENV=test ts-node create-db.ts && jest --watch",
