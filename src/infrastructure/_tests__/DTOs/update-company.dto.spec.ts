@@ -1,5 +1,5 @@
 import { validate } from 'class-validator';
-import { UpdateCompanyDto } from '../../../../src/application/companies/dto/update-company.dto';
+import { UpdateCompanyDto } from '../../../application/companies/dto/update-company.dto';
 
 describe('UpdateCompanyDto', () => {
   it('should validate a valid UpdateCompanyDto', async () => {

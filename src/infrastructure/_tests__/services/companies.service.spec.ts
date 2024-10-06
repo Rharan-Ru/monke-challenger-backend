@@ -1,11 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { CompaniesService } from '../../../../src/application/companies/companies.service';
-import { CreateCompanyDto } from '../../../../src/application/companies/dto/create-company.dto';
-import { UpdateCompanyDto } from '../../../../src/application/companies/dto/update-company.dto';
-import { Company } from '../../../../src/infrastructure/database/entities/company.entity';
+import { CompaniesService } from '../../../application/companies/companies.service';
+import { CreateCompanyDto } from '../../../application/companies/dto/create-company.dto';
+import { UpdateCompanyDto } from '../../../application/companies/dto/update-company.dto';
+import { Company } from '../../database/entities/company.entity';
 import { Repository } from 'typeorm';
-import { CustomError } from '../../../../src/shared/utils/error.custom';
+import { CustomError } from '../../../shared/utils/error.custom';
 
 describe('CompaniesService', () => {
   let service: CompaniesService;

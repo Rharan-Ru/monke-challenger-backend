@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { UserService } from '../../../../src/application/user/user.service';
-import { CreateUserDto } from '../../../../src/application/user/dto/create-user.dto';
-import { User } from '../../../../src/infrastructure/database/entities/user.entity';
-import { CustomError } from '../../../../src/shared/utils/error.custom';
+import { UserService } from '../../../application/user/user.service';
+import { CreateUserDto } from '../../../application/user/dto/create-user.dto';
+import { User } from '../../database/entities/user.entity';
+import { CustomError } from '../../../shared/utils/error.custom';
 import { Repository } from 'typeorm';
 
 describe('UserService', () => {

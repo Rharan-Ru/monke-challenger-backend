@@ -1,4 +1,4 @@
-import { CustomError } from '../../../../src/shared/utils/error.custom';
+import { CustomError } from '../../../shared/utils/error.custom';
 
 describe('CustomError', () => {
   it('should create an error with the given message and status', () => {

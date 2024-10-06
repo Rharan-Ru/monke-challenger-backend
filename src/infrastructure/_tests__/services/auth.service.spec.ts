@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
-import { User } from '../../../../src/infrastructure/database/entities/user.entity';
+import { User } from '../../database/entities/user.entity';
 import { Repository } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcryptjs';
-import { CustomError } from '../../../../src/shared/utils/error.custom';
-import { AuthService } from '../../../../src/infrastructure/auth/auth.service';
-import { AuthLoginDTO } from '../../../../src/infrastructure/swagger/auth.dto.swagger';
+import { CustomError } from '../../../shared/utils/error.custom';
+import { AuthService } from '../../auth/auth.service';
+import { AuthLoginDTO } from '../../swagger/auth.dto.swagger';
 
 describe('AuthService', () => {
   let service: AuthService;

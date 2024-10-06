@@ -6,7 +6,7 @@ import { User } from '../../database/entities/user.entity';
 import { DatabaseDataSource } from '../../database/database.datasource';
 import { AppModule } from '../../../app.module';
 import { HttpExceptionFilter } from '../../../shared/filters/http-exception.filter';
-import { AuthLoginDTO } from '../../../../src/infrastructure/swagger/auth.dto.swagger';
+import { AuthLoginDTO } from '../../swagger/auth.dto.swagger';
 
 describe('Auth (e2e)', () => {
   let app: INestApplication;
