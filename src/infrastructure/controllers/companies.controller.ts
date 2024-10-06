@@ -31,7 +31,11 @@ export class CompaniesController {
   ) {
     try {
       const userId = req.user.userId;
-      return await this.companiesService.create(createCompanyDto, +userId);
+      const company = await this.companiesService.create(
+        createCompanyDto,
+        +userId,
+      );
+      return company;
     } catch (error) {
       throw new HttpException(error.message, error.status);
     }

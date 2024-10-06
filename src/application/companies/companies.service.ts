@@ -17,6 +17,14 @@ export class CompaniesService {
   ) {}
 
   async create(createCompanyDto: CreateCompanyDto, userId: number) {
+    const companyExists = await this.companyRepository.findOne({
+      where: { name: createCompanyDto.name },
+    });
+
+    if (companyExists) {
+      throw new CustomError('Company already exists', 400);
+    }
+
     const company = this.companyRepository.create({
       ...createCompanyDto,
       user: { id: userId },
