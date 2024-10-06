@@ -52,6 +52,7 @@ describe('UserService', () => {
 
   describe('create', () => {
     it('should create a new user', async () => {
+      (repository.findOne as jest.Mock).mockResolvedValueOnce(null);
       const result = await service.create(mockUserCreateDTO);
       expect(repository.create).toHaveBeenCalledWith(mockUserCreateDTO);
       expect(repository.save).toHaveBeenCalledWith(mockUser);

@@ -67,6 +67,7 @@ describe('CompaniesService', () => {
 
   describe('create', () => {
     it('should create a new company', async () => {
+      (repository.findOne as jest.Mock).mockResolvedValueOnce(null);
       const result = await service.create(mockCompanyCreateDTO, 1);
       expect(repository.create).toHaveBeenCalledWith({
         ...mockCompanyCreateDTO,
