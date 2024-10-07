@@ -3,6 +3,9 @@
 
 Bem-vindo ao nosso projeto **Gerenciador de Empresas**! Este é um sistema simples que permite que os usuários se cadastrem, façam login e gerenciem empresas com facilidade. O projeto backend foi construído com **NestJS**, uma estrutura poderosa para Node.js que promove uma arquitetura escalável e organizada.
 
+### Link para o respositório frontend
+https://github.com/Rharan-Ru/monke-challenger-frontend
+
 ## Funcionalidades
 
 - CRUD Usuários
