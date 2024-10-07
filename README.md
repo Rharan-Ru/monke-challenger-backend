@@ -1,85 +1,128 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Monke Challenger
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Bem-vindo ao nosso projeto **Gerenciador de Empresas**! Este é um sistema simples que permite que os usuários se cadastrem, façam login e gerenciem empresas com facilidade. O projeto backend foi construído com **NestJS**, uma estrutura poderosa para Node.js que promove uma arquitetura escalável e organizada.
 
-## Description
+## Funcionalidades
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- CRUD Usuários
+- CRUD Companias
+- Autenticação JWT
 
-## Project setup
+## Stack utilizada
+
+**Back-end:** Node, NestJs, Swagger, TypeORM, MariaDB, JWT, Jest, Typescript
+
+
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env, você pode encontrar um exemplo no arquivo .env.example:
+
+#### Development
+`NODE_ENV=development`
+
+`FRONTEND_URL=http://localhost:4200`
+
+### Database
+
+`DB_TYPE=mariadb`
+
+`DB_HOST=localhost`
+
+`DB_PORT=3306`
+
+`DB_USERNAME=root`
+
+`DB_PASSWORD=root`
+
+`DB_DATABASE=challenge`
+
+#### JWT
+
+`SECRET_KEY=challenge`
+
+
+## Rodando localmente
+
+Clone o projeto
 
 ```bash
-$ npm install
+  git clone https://github.com/Rharan-Ru/monke-challenger-backend.git
 ```
 
-## Compile and run the project
+Entre no diretório do projeto
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+  cd monke-challenger-backend
 ```
 
-## Run tests
+Verifique se o docker está instalado na sua máquina, primeiro de permissão e instale o docker caso nescessário, execute o comando na pasta root do projeto
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+  chmod +x install_docker.sh
+  ./install_docker.sh
 ```
 
-## Resources
+Inicie o servidor com docker-compose
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+  docker compose -f docker-compose-dev.yml up
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## 📖 Acessando a Documentação da API com Swagger
 
-## Support
+Após iniciar o servidor, você pode acessar a documentação da API através do Swagger, que fornece uma interface interativa para explorar as rotas disponíveis. 
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Passos para Acessar
 
-## Stay in touch
+1. **Inicie o servidor** (se ainda não o fez):
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+   ```bash
+    docker compose -f docker-compose-dev.yml up
+   ```
+2. **Acesse a url do swagger**
 
-## License
+    ```
+    http://localhost:3000/api
+    ```
+## Rodando os testes
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Para rodar os testes, rode o seguinte comando
+
+```bash
+  npm run test
+```
+
+Para ver a cobertura de testes utilize
+
+```bash
+  npm run test:cov
+```
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+## 🏗️ Arquitetura e Decisões Técnicas
+
+Este projeto foi estruturado e pensado para garantir escalabilidade, organização e facilidade de manutenção. Abaixo estão as principais decisões técnicas tomadas ao longo do desenvolvimento:
+
+### 1️⃣ Estrutura de Pastas: Clean Architecture
+Optei por uma estrutura de pastas inspirada na **Clean Architecture** para garantir uma organização clara e uma escalabilidade fácil. Esta abordagem facilita a localização dos códigos, permitindo modificações com mais simplicidade e sem comprometer a legibilidade do projeto. Além disso, a separação de responsabilidades promove uma base mais sólida, preparada para futuras abstrações ou integrações mais complexas, caso necessário.
+
+### 2️⃣ TypeORM
+Escolhi o **TypeORM** como ORM (Object-Relational Mapping) pela sua simplicidade e excelente suporte ao **TypeScript**. O **NestJS** possui integração nativa com o TypeORM, o que facilita a configuração e permite criar consultas e relações de forma intuitiva e eficiente. Isso agiliza o desenvolvimento e reduz a complexidade na manipulação dos dados.
+
+### 3️⃣ Abordagem SaaS com Multitenancy
+Ao invés de usar uma única entidade de empresas (companies), optei por um modelo **SaaS (Software as a Service)**, onde cada usuário pode criar e gerenciar múltiplas companies. Isso garante que os dados de cada usuário sejam isolados, permitindo que cada um utilize a aplicação sem interferir nos dados de outros usuários. Essa abordagem fortalece a segurança e flexibilidade do sistema, permitindo que ele seja escalável conforme o crescimento da base de usuários.
+
+### 4️⃣ Testes com Jest
+Optei por utilizar **Jest** para os testes do projeto, já que ele é nativamente suportado pelo **NestJS**. A integração é fácil e direta, o que torna o processo de criação de testes conveniente. Para um projeto simples como este, o **Jest** oferece a cobertura necessária para garantir a confiabilidade do código sem a complexidade de setups adicionais.
+
+### 5️⃣ Dockerização
+A **dockerização** do projeto foi uma escolha estratégica para simplificar o processo de deploy e garantir que o ambiente de desenvolvimento seja o mais consistente possível. Com o **Docker**, qualquer pessoa pode rodar o projeto sem se preocupar com o versionamento de dependências ou a configuração de serviços externos. Isso melhora a portabilidade e diminui os riscos de problemas de compatibilidade em diferentes máquinas.
+
+### 6️⃣ Separação de Repositórios: Backend e Frontend
+Para evitar a criação de um monólito, separei o **backend** e o **frontend** em repositórios diferentes. Essa separação permite um fluxo de deploy mais simplificado e possibilita o uso de plataformas específicas para cada parte da aplicação. No caso deste projeto, o **Railway** foi utilizado para o backend e o **Vercel** para o frontend. Isso também oferece maior flexibilidade para escalar e manter cada parte da aplicação de maneira independente.
