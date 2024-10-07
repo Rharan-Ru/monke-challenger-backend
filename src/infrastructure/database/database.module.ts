@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { Company } from './entities/company.entity';
-import { User } from './entities/user.entity';
 import { DatabaseDataSource } from './database.datasource';
+import { User } from './entities/user.entity';
+import { Company } from './entities/company.entity';
 
 @Module({
   imports: [
@@ -19,8 +19,9 @@ import { DatabaseDataSource } from './database.datasource';
           configService.get('NODE_ENV') === 'test'
             ? 'challenger-test'
             : (configService.get('DB_DATABASE') as string),
-        entities: [Company, User],
-        synchronize: true,
+        entities: [User, Company],
+        migrations: ['./migrations/*{.ts,.js}'],
+        synchronize: false,
       }),
       inject: [ConfigService],
     }),

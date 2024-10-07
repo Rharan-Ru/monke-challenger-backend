@@ -17,7 +17,12 @@
     "test:watch": "NODE_ENV=test ts-node create-db.ts && jest --watch",
     "test:cov": "NODE_ENV=test ts-node create-db.ts && jest --coverage",
     "test:debug": "NODE_ENV=test ts-node create-db.ts && node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "NODE_ENV=test ts-node create-db.ts && jest --config ./test/jest-e2e.json"
+    "test:e2e": "NODE_ENV=test ts-node create-db.ts && jest --config ./test/jest-e2e.json",
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/infrastructure/database/data-source.ts",
+    "migration:generate": "npm run typeorm -- -d ./src/infrastructure/database/data-source.ts migration:generate ./src/infrastructure/database/migrations/$npm_config_name",
+    "migration:create": "npm run typeorm -- migration:create ./src/infrastructure/database/migrations/$npm_config_name",
+    "migration:revert": "npm run typeorm -- -d ./src/infrastructure/database/data-source.ts migration:revert"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

@@ -1,8 +1,8 @@
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DataSource } from 'typeorm';
-import { Company } from './entities/company.entity';
 import { User } from './entities/user.entity';
+import { Company } from './entities/company.entity';
 
 @Injectable()
 export class DatabaseDataSource implements OnModuleInit, OnModuleDestroy {
@@ -21,8 +21,9 @@ export class DatabaseDataSource implements OnModuleInit, OnModuleDestroy {
         this.configService.get('NODE_ENV') === 'test'
           ? 'challenger-test'
           : (this.configService.get('DB_DATABASE') as string),
-      entities: [Company, User],
-      synchronize: true,
+      entities: [User, Company],
+      migrations: ['./migrations/*{.ts,.js}'],
+      synchronize: false,
     });
 
     try {
