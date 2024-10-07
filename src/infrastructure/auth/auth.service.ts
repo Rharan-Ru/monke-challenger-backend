@@ -21,6 +21,7 @@ export class AuthService {
     const payload = { email, userId: id };
     const token = this.jwtService.sign(payload, {
       secret: this.configService.get<string>('SECRET_KEY', 'challenge'),
+      expiresIn: '1h',
     });
 
     return token;
@@ -51,6 +52,7 @@ export class AuthService {
     return {
       access_token: this.jwtService.sign(payload, {
         secret: this.configService.get<string>('SECRET_KEY', 'challenge'),
+        expiresIn: '1h',
       }),
     };
   }
