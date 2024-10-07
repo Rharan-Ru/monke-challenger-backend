@@ -100,11 +100,11 @@ Para ver a cobertura de testes utilize
 ```
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/Rharan-Ru/monke-challenger-backend/blob/main/Screenshot%202024-10-07%20at%2002-06-03%20Frontend.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/Rharan-Ru/monke-challenger-backend/blob/main/Screenshot%202024-10-07%20at%2002-07-21%20Frontend.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/Rharan-Ru/monke-challenger-backend/blob/main/Screenshot%202024-10-07%20at%2002-07-36%20Swagger%20UI.png)
 ## 🏗️ Arquitetura e Decisões Técnicas
 
 Este projeto foi estruturado e pensado para garantir escalabilidade, organização e facilidade de manutenção. Abaixo estão as principais decisões técnicas tomadas ao longo do desenvolvimento:
